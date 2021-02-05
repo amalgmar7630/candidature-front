@@ -2,13 +2,80 @@
   {
     "type": "INPUT",
     "inputType": "text",
-    "id": "username",
-    "placeholder": "Username"
+    "id": "firstname",
+    "label": "First Name",
+    "placeholder": "First Name",
+    "required": true,
+    "maxLength": 30
   },
   {
     "type": "INPUT",
-    "inputType": "password",
-    "id": "password",
-    "placeholder": "Password"
+    "inputType": "text",
+    "id": "lastname",
+    "label": "Last Name",
+    "placeholder": "Last Name",
+    "required": true,
+    "maxLength": 30
+  },
+  {
+    "type": "INPUT",
+    "inputType": "text",
+    "id": "email",
+    "label": "Email",
+    "placeholder": "Email",
+    "required": true,
+    "maxLength": 200
+  },
+  {
+    "type": "INPUT",
+    "inputType": "date",
+    "id": "birthdate",
+    "label": "Birthdate",
+    "placeholder": "Birthdate"
+  },
+  {
+    "type": "INPUT",
+    "inputType": "text",
+    "id": "phone",
+    "label": "Phone Number",
+    "placeholder": "Phone Number",
+    "required": true,
+    "minLength": 8,
+    "maxLength" : 8
+  },
+  {
+    "type": "INPUT",
+    "inputType": "number",
+    "id": "years_experience",
+    "label": "Years Of Experience",
+    "placeholder": "Years Of Experience",
+    "minLength": 0,
+    "min": 0
+  },
+  {
+    "type": "INPUT",
+    "inputType": "number",
+    "id": "availability",
+    "label": "Availability",
+    "placeholder": "Availability",
+    "minLength": 0,
+    "maxLength": 6,
+    "min": 0,
+    "max": 6
+  },
+  {
+    "type": "INPUT",
+    "inputType": "file",
+    "id": "cv_file",
+    "label": "CV",
+    "placeholder": "CV",
+    "url": "",
+    "required": true
+  } ,{
+    "type": "TEXTAREA",
+    "inputType": "text",
+    "id": "message",
+    "label": "Message",
+    "placeholder": "Message"
   }
 ]

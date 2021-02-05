@@ -1,0 +1,11 @@
+<!-- Default form register -->
+<form class="text-center border border-light p-5">
+
+  <p class="h4 mb-4">Sign up</p>
+
+  <dynamic-ng-bootstrap-form *ngIf="formGroup" [group]="formGroup" [model]="formModel">
+  </dynamic-ng-bootstrap-form>
+  <!-- Sign up button -->
+  <button mdbBtn color="info" class="my-4" type="submit" (click)="signUp1($event)">Sign Up</button>
+</form>
+<!-- Default form register -->

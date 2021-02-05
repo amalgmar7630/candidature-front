@@ -1,0 +1,8 @@
+<div class="w-75 mx-auto mt-5 ">
+  <h2> Create Candidate</h2>
+  <div class="form-group mt-5">
+    <dynamic-ng-bootstrap-form *ngIf="formGroup" [group]="formGroup" [model]="formModel" (change)="onChange($event)">
+    </dynamic-ng-bootstrap-form>
+    <button class="btn btn-primary" (click)="Apply()">Apply</button>
+  </div>
+</div>

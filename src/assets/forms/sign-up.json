@@ -2,13 +2,25 @@
   {
     "type": "INPUT",
     "inputType": "text",
+    "id": "email",
+    "placeholder": "Email"
+  },
+  {
+    "type": "INPUT",
+    "inputType": "text",
     "id": "username",
     "placeholder": "Username"
   },
   {
     "type": "INPUT",
     "inputType": "password",
-    "id": "password",
-    "placeholder": "Password"
+    "id": "password1",
+    "placeholder": "Password1"
+  },
+  {
+    "type": "INPUT",
+    "inputType": "password",
+    "id": "password2",
+    "placeholder": "Password2"
   }
 ]

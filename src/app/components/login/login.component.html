@@ -1,1 +1,18 @@
-<p>login works!</p>
+<!-- Default form login -->
+<div class="w-75 mx-auto mt-5">
+  <form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Email -->
+    <dynamic-ng-bootstrap-form *ngIf="formGroup" [group]="formGroup" [model]="formModel">
+    </dynamic-ng-bootstrap-form>
+    <!-- Sign in button -->
+    <button mdbBtn color="info" class="my-4" type="submit" (click)="login1($event)">Sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+      <a [routerLink]="['/signup']">Register</a>
+    </p>
+  </form>
+</div>

@@ -1,0 +1,81 @@
+<div class="w-75 mx-auto mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h2> Candidates List</h2>
+    <button class="btn btn-success" (click)="addCandidate(content)">Add Candidate</button>
+  </div>
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <div class="md-form">
+          <input
+            type="text"
+            [(ngModel)]="searchText"
+            class="form-control"
+            id="search"
+            mdbInput
+          />
+          <label for="search">Search</label>
+        </div>
+      </div>
+    </div>
+    <table id="tableSortExample" mdbTable class="z-depth-1">
+      <thead>
+      <tr>
+        <th [mdbTableSort]="candidates" sortBy="id">ID</th>
+        <th [mdbTableSort]="candidates" sortBy="firstname">First Name</th>
+        <th [mdbTableSort]="candidates" sortBy="lastname">Last Name</th>
+        <th [mdbTableSort]="candidates" sortBy="email">Email</th>
+        <th [mdbTableSort]="candidates" sortBy="birthdate">Birthdate</th>
+        <th [mdbTableSort]="candidates" sortBy="phone">Phone Number</th>
+        <th [mdbTableSort]="candidates" sortBy="years_experience">Years Of Experience</th>
+        <th [mdbTableSort]="candidates" sortBy="availability">Availability</th>
+        <th [mdbTableSort]="candidates" sortBy="application_status">Application Status</th>
+        <th [mdbTableSort]="candidates" sortBy="message">Message</th>
+        <th>CV</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let el of candidates; let i = index">
+        <th scope="row">{{i  + 1}}</th>
+        <td>{{el.firstname}}</td>
+        <td>{{el.lastname}}</td>
+        <td>{{el.email}}</td>
+        <td>{{el.birthdate}}</td>
+        <td>{{el.phone}}</td>
+        <td>{{el.years_experience}}</td>
+        <td>{{el.availability}}</td>
+        <td>{{el.application_status}}</td>
+        <td>{{el.message}}</td>
+        <td><a href="{{el.cv_file}}">{{el.filename}}</a></td>
+        <td>
+          <button class="btn btn-sm btn-warning" (click)="updateCandidate(el, content)">Edit</button>
+          <button class="btn btn-sm btn-primary ml-2" (click)="previewCandidate(el)">Preview</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <dynamic-ng-bootstrap-form *ngIf="formGroup" [group]="formGroup" [model]="formModel" (change)="onChange($event)">
+          <ng-template modelId="cv_file">
+            <p>{{filename}}</p>
+          </ng-template>
+        </dynamic-ng-bootstrap-form>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="saveCandidate()">Save</button>
+  </div>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="w-75 mx-auto mt-5 ">
+  <h2> Candidate Details</h2>
+  <div class="form-group mt-5">
+    <dynamic-ng-bootstrap-form *ngIf="formGroup" [group]="formGroup" [model]="formModel" readonly="true">
+      <ng-template modelId="cv_file">
+        <p>{{filename}}</p>
+      </ng-template>
+    </dynamic-ng-bootstrap-form>
+    <button class="btn btn-primary" *ngIf="candidate && (candidate.application_status==='Rejected'|| candidate.application_status==='New')" (click)="Confirm()">Confirm</button>
+    <button class="btn btn-danger ml-2" *ngIf="candidate && (candidate.application_status==='Confirmed' || candidate.application_status==='New')" (click)="reject()">Reject</button>
+  </div>
+</div>

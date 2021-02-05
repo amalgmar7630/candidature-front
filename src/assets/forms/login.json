@@ -1,0 +1,14 @@
+[
+  {
+    "type": "INPUT",
+    "inputType": "text",
+    "id": "username",
+    "placeholder": "Username"
+  },
+  {
+    "type": "INPUT",
+    "inputType": "password",
+    "id": "password",
+    "placeholder": "Password"
+  }
+]
